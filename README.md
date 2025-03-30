@@ -1,4 +1,4 @@
-# LitePolis-router Template
+# LitePolis-router Example
 
 This repository serves as a template for creating router modules for LitePolis.  It provides a basic structure and example code to guide you through the process.
 
