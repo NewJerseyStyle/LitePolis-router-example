@@ -13,7 +13,7 @@ class TestExports(unittest.TestCase):
 
     def test_required_exports_exist(self):
         """Check if required variables and init() are exported in __init__.py"""
-        required = ["router", "prefix", "dependencies", "DEFAULT_CONFIG", "init"]
+        required = ["router", "prefix", "dependencies", "DEFAULT_CONFIG"]
         for attr in required:
             self.assertTrue(
                 hasattr(self.pkg, attr),
@@ -22,17 +22,10 @@ class TestExports(unittest.TestCase):
 
     def test_exported_values_from_core(self):
         """Ensure all exports come from .core module"""
-        required = ["router", "prefix", "dependencies", "DEFAULT_CONFIG", "init"]
+        required = ["router", "prefix", "dependencies", "DEFAULT_CONFIG"]
         for attr in required:
             self.assertIs(
                 getattr(self.pkg, attr),
                 getattr(self.core, attr),
                 f"{attr} in __init__.py does not match core.{attr}",
             )
-
-    def test_init_is_callable(self):
-        """Verify init() is a callable function"""
-        self.assertTrue(
-            callable(self.pkg.init),
-            "init() must be a function.",
-        )

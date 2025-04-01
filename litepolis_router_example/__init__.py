@@ -1,1 +1,1 @@
-from .core import router, prefix, dependencies, DEFAULT_CONFIG, init
+from .core import router, prefix, dependencies, DEFAULT_CONFIG

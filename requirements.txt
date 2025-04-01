@@ -1,2 +1,4 @@
+litepolis
 fastapi
 pytest
+litepolis-database-example
